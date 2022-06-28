@@ -7,35 +7,7 @@ export default {
   favicon:
     '//img.alicdn.com/imgextra/i3/O1CN01XtT3Tv1Wd1b5hNVKy_!!6000000002810-55-tps-360-360.svg',
   outputPath: './doc-site',
-  headScripts: [
-    `
-    function loadAd(){
-      var header = document.querySelector('.__dumi-default-layout-content .markdown h1')
-      if(header && !header.querySelector('#_carbonads_js')){
-        var script = document.createElement('script')
-        script.src = '//cdn.carbonads.com/carbon.js?serve=CEAICK3M&placement=formilyjsorg'
-        script.id = '_carbonads_js'
-        script.classList.add('head-ad')
-        header.appendChild(script)
-      }
-    }
-    var request = null
-    var observer = new MutationObserver(function(){
-      cancelIdleCallback(request)
-      request = requestIdleCallback(loadAd)
-    })
-    document.addEventListener('DOMContentLoaded',function(){
-      loadAd()
-      observer.observe(
-        document.body,
-        {
-          childList:true,
-          subtree:true
-        }
-      )
-    })
-    `,
-  ],
+  headScripts: [],
   styles: [
     `.__dumi-default-navbar-logo{
       background-size: 140px!important;
